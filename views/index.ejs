@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>방명록</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>나만의 방명록 📝</h1>
+  <form action="/submit" method="POST">
+    <input type="text" name="name" placeholder="이름" required>
+    <input type="text" name="message" placeholder="메시지" required>
+    <button type="submit">등록</button>
+  </form>
+  <ul>
+    <% messages.forEach(msg => { %>
+      <li><strong><%= msg.name %></strong>: <%= msg.message %> <small>(<%= msg.created_at %>)</small></li>
+    <% }) %>
+  </ul>
+</body>
+</html>
